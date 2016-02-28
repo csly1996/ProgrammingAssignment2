@@ -6,14 +6,17 @@ makeCacheMatrix <- function(x = matrix()) {
     x <<- y
     i <<- NULL
   }
-  get = function() x
+  get <- function() x
+  #inverse of the matrix 
   setinv<- function(inverse) i <<- inverse 
-  getinv = function() i
+  getinv <- function() i
   list(set=set, get=get, 
        setinv=setinv, 
        getinv=getinv)
 }
 
+
+#solve the cache matrix 
 cacheSolve <- function(x, ...) {
   
   i<- x$getinv()
